@@ -9,6 +9,6 @@ bootstrapApplication(AppComponent, appConfig)
 
 
 
-const test = new Test('Hallo TypeScript 😻!!', 42);
-console.log(test.nachricht);
-console.log(test.antwort);
+// const test = new Test('Hallo TypeScript 😻!!', 42);
+// console.log(test.nachricht);
+// console.log(test.antwort);
