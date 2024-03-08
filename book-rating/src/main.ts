@@ -10,11 +10,7 @@ bootstrapApplication(AppComponent, appConfig)
 
 class Test {
 
-  public nachricht: string;
-
-  constructor(nachricht: string) {
-    this.nachricht = nachricht;
-    // console.log(this.nachricht);
+  constructor(public nachricht: string, public antwort: number) {
   }
 }
 
