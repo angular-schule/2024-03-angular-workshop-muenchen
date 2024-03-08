@@ -9,5 +9,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'book-rating';
+
+  // kleine Hausaufgabe
+  // ein Buch hat: isbn, title, description, price - Zeige ein Buch an!
+
+  title = 'Book Rating 🅰️';
+  blubb = 'Hallo'
 }
