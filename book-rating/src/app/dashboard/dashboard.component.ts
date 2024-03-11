@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../book';
 import { BookComponent } from '../book/book.component';
+import { NgClass } from '@angular/common';
 
 // ins terminal: ng g c dashboard
 @Component({
@@ -10,7 +11,8 @@ import { BookComponent } from '../book/book.component';
     // JsonPipe,
     // UpperCasePipe,
     // LowerCasePipe
-    BookComponent
+    BookComponent,
+    NgClass // Direktive: ngClass, ngStyle
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
