@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Book } from '../book';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, LowerCasePipe, UpperCasePipe } from '@angular/common';
 
 // ins terminal: ng g c dashboard
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    JsonPipe
+    JsonPipe,
+    UpperCasePipe,
+    LowerCasePipe
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
