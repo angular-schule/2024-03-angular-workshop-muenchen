@@ -1,1 +1,7 @@
-<p>book works!</p>
+@if (book) {
+  <h2>{{ book.title }}</h2>
+  <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+  <p><strong>Description:</strong> {{ book.description }}</p>
+  <p><strong>Rating:</strong> {{ book.rating }}/5</p>
+  <p><strong>Price:</strong> {{ book.price }} €</p>
+}

@@ -1,10 +1,3 @@
-<p>dashboard works!</p>
-
-<!-- ng g c book -->
-
-<app-book />
-<app-book />
-<app-book />
-
-
-<!-- PAUSE ENDE: 11:15 Uhr -->
+@for (book of books; track book.isbn) {
+  <app-book [book]="book" />
+}
