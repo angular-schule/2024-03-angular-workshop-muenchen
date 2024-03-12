@@ -3,6 +3,7 @@ import { Book } from '../book';
 import { BookComponent } from '../book/book.component';
 import { NgClass } from '@angular/common';
 import { BookRatingService } from '../book-rating.service';
+import { BookStoreService } from '../book-store.service';
 
 // ins terminal: ng g c dashboard
 @Component({
@@ -20,31 +21,11 @@ import { BookRatingService } from '../book-rating.service';
 })
 export class DashboardComponent {
 
-  books: Book[] = [
-    {
-      isbn: '000',
-      title: 'Angular',
-      description: 'Tolles Buch',
-      rating: 5,
-      price: 42.9
-    },
-    {
-      isbn: '111',
-      title: 'AngularJS',
-      description: 'Vorgänger Buch',
-      rating: 3,
-      price: 30
-    },
-    {
-      isbn: '22',
-      title: 'jQuery',
-      description: 'Voll veraltetes Buch',
-      rating: 1,
-      price: 1
-    },
-  ];
+  books: Book[] = [];
 
-  constructor(private bookRatingService: BookRatingService) { }
+  constructor(private bookRatingService: BookRatingService, private store: BookStoreService) {
+    this.store.getAll().subscribe(books => this.books = books);
+  }
 
   doRateUp(book: Book) {
     const ratedBook = this.bookRatingService.rateUp(book);
