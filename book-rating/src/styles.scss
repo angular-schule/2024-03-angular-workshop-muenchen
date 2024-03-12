@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+$primary: #6901a2;
+$enable-rounded: false;
+
+// Hands On
+// 1. Wandle die Farbe nach HSL um (Sass kann das!)
+// 2. Ändere Sie ab, indem du mit Sättigung, Helligkeit experimentierst
+
 @import '@angular-schule/workshop-styles/index';

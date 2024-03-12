@@ -1,7 +1,19 @@
 @if (book) {
-  <h2>{{ book.title }}</h2>
-  <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-  <p><strong>Description:</strong> {{ book.description }}</p>
-  <p><strong>Rating:</strong> {{ book.rating }}/5</p>
-  <p><strong>Price:</strong> {{ book.price }} €</p>
+  <div class="card mb-4">
+    <div class="card-body bg-light">
+        <img class="img-thumbnail float-end" alt="" src="https://api.angular.schule/avatar/{{ book.rating }}">
+      <div class="card-title">
+        <h2>
+          {{ book.title }} - {{ book.price }} €
+          <span class="badge bg-secondary">{{ book.rating }}</span>
+        </h2>
+      </div>
+      <p>{{ book.description }}</p>
+
+      <button type="button" class="btn btn-primary me-2" (click)="book.rating = book.rating - 1">-1</button>
+      <button type="button" class="btn btn-primary"  (click)="book.rating = book.rating + 1">+1</button>
+    </div>
+  </div>
 }
+
+<!-- #6901a2 -->
