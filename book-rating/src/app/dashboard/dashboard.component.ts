@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Book } from '../book';
 import { BookComponent } from '../book/book.component';
 import { NgClass } from '@angular/common';
+import { BookRatingService } from '../book-rating.service';
 
 // ins terminal: ng g c dashboard
 @Component({
@@ -43,11 +44,21 @@ export class DashboardComponent {
     },
   ];
 
+  constructor(private bookRatingService: BookRatingService) { }
+
   doRateUp(book: Book) {
-    console.table(book);
+    const ratedBook = this.bookRatingService.rateUp(book);
+    this.updateAndSort(ratedBook);
   }
 
   doRateDown(book: Book) {
-    console.table(book)
+    const ratedBook = this.bookRatingService.rateDown(book);
+    this.updateAndSort(ratedBook);
+  }
+
+  updateAndSort(ratedBook: Book) {
+    this.books = this.books
+      .map(b => b.isbn === ratedBook.isbn ? ratedBook : b)
+      .sort((a, b) => b.rating - a.rating)
   }
 }
