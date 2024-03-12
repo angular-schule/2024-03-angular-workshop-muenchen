@@ -1,5 +1,9 @@
 @for (book of books; track book.isbn) {
   <div [ngClass]="{ grayBg: $even }">
-    <app-book [book]="book" />
+    <app-book
+      [book]="book"
+      (rateUp)="doRateUp($event)"
+      (rateDown)="doRateDown($event)"
+    />
   </div>
 }
