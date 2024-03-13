@@ -9,6 +9,9 @@
     @if (hasError(c.isbn, 'required')) {
       <div class="feedback-error">Bitte geben Sie eine ISBN ein!</div>
     }
+    @if (hasError(c.isbn, 'minlength')) {
+      <div class="feedback-error">Bitte geben Sie 3 Zeichen ein!</div>
+    }
   </div>
 
   <div class="form-group">

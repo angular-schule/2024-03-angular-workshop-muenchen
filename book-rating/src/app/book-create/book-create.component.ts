@@ -32,9 +32,7 @@ export class BookCreateComponent {
   }
 
   hasError(control: FormControl, errorCode: string) {
-    // 
-    control.dirty
-    return false;
+    return control.hasError(errorCode) && control.touched;
   }
 
   c = this.bookForm.controls;
