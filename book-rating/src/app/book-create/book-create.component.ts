@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Book } from '../book';
 
@@ -12,6 +12,8 @@ import { Book } from '../book';
   styleUrl: './book-create.component.scss'
 })
 export class BookCreateComponent {
+
+  @Output() create = new EventEmitter<Book>();
 
   bookForm = new FormGroup({
 
@@ -51,7 +53,7 @@ export class BookCreateComponent {
     // 2. Versende das Event
     // 3. Subscribe dich auf das Event im Dashboard
     // 4. Füge das Buch dem Array hinzu (Verwende den Spread-Operator dafür `...`)
-
+    this.create.emit(newBook);
     this.bookForm.reset();
   }
 }
