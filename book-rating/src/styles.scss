@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-$primary: #6901a2;
-$enable-rounded: false;
+$start: 280;
+$primary: hsl($start, 100%, 40%);
+$secondary: hsl($start+30, 85%, 48%);
+$enable-rounded: true;
 
 // Hands On
 // 1. Wandle die Farbe nach HSL um (Sass kann das!)
