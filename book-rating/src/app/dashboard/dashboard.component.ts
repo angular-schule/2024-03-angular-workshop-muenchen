@@ -4,6 +4,7 @@ import { BookComponent } from '../book/book.component';
 import { NgClass } from '@angular/common';
 import { BookRatingService } from '../book-rating.service';
 import { BookStoreService } from '../book-store.service';
+import { BookCreateComponent } from '../book-create/book-create.component';
 
 // ins terminal: ng g c dashboard
 @Component({
@@ -14,7 +15,8 @@ import { BookStoreService } from '../book-store.service';
     // UpperCasePipe,
     // LowerCasePipe
     BookComponent,
-    NgClass // Direktive: ngClass, ngStyle
+    NgClass, // Direktive: ngClass, ngStyle
+    BookCreateComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
