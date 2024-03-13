@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Book } from '../book';
 
 @Component({
   selector: 'app-book-create',
@@ -36,4 +37,21 @@ export class BookCreateComponent {
   }
 
   c = this.bookForm.controls;
+
+  submitForm() {
+
+    const newBook: Book = {
+      ...this.bookForm.getRawValue(),
+      rating: 1,
+      price: 1
+    }
+
+    // TODO
+    // 1. Erzeuge ein Event mit dem Namen `create` (Payload: `Book`)
+    // 2. Versende das Event
+    // 3. Subscribe dich auf das Event im Dashboard
+    // 4. Füge das Buch dem Array hinzu (Verwende den Spread-Operator dafür `...`)
+
+    this.bookForm.reset();
+  }
 }
