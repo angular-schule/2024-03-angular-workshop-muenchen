@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Book } from '../book';
+import { Book } from '../../book';
 
 @Component({
   selector: 'app-book-create',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Book } from '../book';
+import { Book } from '../../book';
 import { BookComponent } from '../book/book.component';
 import { NgClass } from '@angular/common';
 import { BookRatingService } from '../book-rating.service';
