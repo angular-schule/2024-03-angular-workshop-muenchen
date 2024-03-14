@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { map, mergeMap } from 'rxjs';
+import { concatMap, map, mergeMap } from 'rxjs';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 import { JsonPipe } from '@angular/common';
@@ -24,7 +24,7 @@ export class BookDetailsComponent {
 
     router.paramMap.pipe(
       map(paramMap => paramMap.get('isbn') || ''),
-      mergeMap(isbn => store.getSingle(isbn))
+      concatMap(isbn => store.getSingle(isbn))
     ).subscribe(book => this.book = book);
   }
 }
