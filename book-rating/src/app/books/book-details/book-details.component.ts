@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { catchError, concatMap, map, mergeMap, of, switchMap } from 'rxjs';
+import { catchError, concatMap, map, mergeMap, of, retry, switchMap } from 'rxjs';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 import { JsonPipe } from '@angular/common';
@@ -23,9 +23,14 @@ export class BookDetailsComponent {
 
   constructor(router: ActivatedRoute, private store: BookStoreService) {
 
+    // TODO: lies dir im Angular-Buch das Kapitel zur async-Pipe durch
     router.paramMap.pipe(
       map(paramMap => paramMap.get('isbn') || ''),
       switchMap(isbn => store.getSingle(isbn).pipe(
+        retry({
+          count: 3,
+          delay: 1000
+        }),
         catchError((err: HttpErrorResponse) => { return of({
           isbn: '0',
           title: 'Fehler',
