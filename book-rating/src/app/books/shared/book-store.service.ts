@@ -17,6 +17,6 @@ export class BookStoreService {
   }
 
   getSingle(isbn: string): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/books/${isbn}`)
+    return this.http.get<Book>(`${this.apiUrl}/books/${isbn}/slow`)
   }
 }

@@ -2,17 +2,22 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
 import { BookStoreService } from '../shared/book-store.service';
+import { Book } from '../shared/book';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-book-details',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    JsonPipe
   ],
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.scss'
 })
 export class BookDetailsComponent {
+
+  book: Book | undefined;
 
 
   constructor(router: ActivatedRoute, private store: BookStoreService) {
@@ -20,6 +25,8 @@ export class BookDetailsComponent {
     router.paramMap.pipe(
       map(paramMap => paramMap.get('isbn') || ''),
       map(isbn => store.getSingle(isbn))
-    ).subscribe(x => console.log(x.subscribe(y => console.log(y))));
+    ).subscribe(bookObservable => {
+      bookObservable.subscribe(book => this.book = book);
+    });
   }
 }
