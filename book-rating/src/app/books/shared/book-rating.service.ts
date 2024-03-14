@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Book } from '../book';
+import { Book } from './book';
 
 /**
  * Service for rating books within a specified range.

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Book } from '../../book';
+import { Book } from '../shared/book';
 import { BookComponent } from '../book/book.component';
 import { NgClass } from '@angular/common';
-import { BookRatingService } from '../book-rating.service';
-import { BookStoreService } from '../book-store.service';
+import { BookRatingService } from '../shared/book-rating.service';
+import { BookStoreService } from '../shared/book-store.service';
 import { BookCreateComponent } from '../book-create/book-create.component';
 
 // ins terminal: ng g c dashboard

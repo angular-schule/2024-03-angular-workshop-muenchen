@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BookRatingService } from './book-rating.service';
-import { Book } from '../book';
+import { Book } from './book';
 
 // 90 % AI -- fdescribe führt nur diesen Test durch
 fdescribe('BookRatingService', () => {
