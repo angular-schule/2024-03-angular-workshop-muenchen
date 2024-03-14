@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../shared/book';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss'
 })

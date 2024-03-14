@@ -16,3 +16,4 @@ export class AppComponent {
   title = 'Book Rating 🅰️';
 
 }
+
